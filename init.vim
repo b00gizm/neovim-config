@@ -12,7 +12,9 @@ Plug 'mileszs/ack.vim'
 Plug 'mhartington/oceanic-next'
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.config/nvim/plugged/gocode/vim/symlink.sh' }
 Plug 'pangloss/vim-javascript'
+Plug 'pbogut/deoplete-padawan'
 Plug 'scrooloose/nerdtree'
+Plug 'shawncplus/phpcomplete.vim'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
@@ -35,7 +37,7 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
 " supertab
-let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 " vim-colorschemes
 colorscheme OceanicNext
@@ -44,6 +46,10 @@ colorscheme OceanicNext
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#pointer = 1
+
+" deoplete-padawan
+let g:deoplete#sources#padawan#server_command = '/root/.composer/vendor/bin/padawan-server'
+let g:deoplete#sources#padawan#server_autostart = 1
 
 " nerdtree
 autocmd StdinReadPre * let s:std_in=1
